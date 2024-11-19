@@ -1,8 +1,10 @@
-import imagenes from '../assets/imagenes.js'
+import banner from '../assets/banner.jpg'
+import stepimg from '../assets/stepBystep.jpg'
 
 const HomePage = () => {
     return (
         <>
+
             <section className="text-gray-600 body-font">
                 <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -24,7 +26,12 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                        <img className="object-cover object-center rounded" alt="hero" src="{imagenes.img1}" />
+                        <img className="object-cover object-center rounded" alt="hero" src={banner} />
+                        {/*  <img
+                            className="rounded-xl shadow-lg w-80 h-80 object-cover"
+                            src={banner}
+                            alt="Banner"
+                        /> */}
                     </div>
                 </div>
             </section>
@@ -32,7 +39,12 @@ const HomePage = () => {
             <section className="text-gray-600 body-font">
                 <div className="container px-7 py-24 mx-auto flex flex-wrap">
                     <div className="flex flex-wrap w-full">
-                        <img className="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12" src="https://img.freepik.com/foto-gratis/surtido-innovacion-abstracta-vista-superior_23-2148909077.jpg?t=st=1731981431~exp=1731985031~hmac=cf6bae221190f2d2f21b0dd66227db798389b5a4ef11ed73f37e8ae45f9aad1c&w=740" alt="step" />
+                        <img className="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12" src={stepimg} alt="step" />
+                        {/*  <img
+                            className="rounded-xl shadow-lg w-80 h-80 object-cover"
+                            src={banner}
+                            alt="Banner"
+                        /> */}
                         <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
 
                             {/** STEP 1 */}
@@ -40,7 +52,7 @@ const HomePage = () => {
                                 <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                                     <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                                 </div>
-                                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 inline-flex items-center justify-center text-white relative z-10">
+                                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 inline-flex items-center justify-center text-white relative z-10">
                                     <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                                     </svg>

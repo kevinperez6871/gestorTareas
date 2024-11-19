@@ -111,7 +111,7 @@ function NavBar() {
     const { isAuthenticated, logout, user } = useAuth();
 
     return (
-        <nav className="text-gray-600 body-font bg-zinc-700 py-5 px-5 rounded-lg w-[98%] mx-auto shadow-md">
+        <nav className="text-gray-600 body-font bg-zinc-700 py-5 px-5 rounded-lg w-[100%] mx-auto shadow-md">
             <div className="container mx-auto flex flex-wrap items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
