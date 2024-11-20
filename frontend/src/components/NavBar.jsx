@@ -1,20 +1,29 @@
 import Logo from '../assets/logo.png'
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { NavLink } from 'react-router-dom';
+
 
 const NavBar = () => {
     const { isAuthenticated, logout, user } = useAuth();
     return (
         <>
             <div className=" body-font">
-                <nav className='text-white body-font  bg-slate-800  py-5 px-5  w-[100%] mx-auto shadow-md'>
+                <nav className='text-white body-font  bg-slate-800  py-5 px-5  w-[100%] mx-auto shadow-lg'>
                     <div className="container mx-auto py-0 px-5 flex flex-wrap items-end flex-col sm:flex-row sm:items-center sm:text-left text-center">
                         <div className="flex sm:justify-end justify-center w-full gap-10 items-center">
                             {isAuthenticated ? (
                                 <>
                                     <Link
+                                        to="/tasks"
+                                        className="inline-flex items-center bg-[#2d6397] border-0 py-1 px-3 focus:outline-none hover:bg-[#e79128] rounded text-white font-bold text-sm"
+                                    >
+                                        Todas mis Tareas
+                                    </Link>
+
+                                    <Link
                                         to="/add-task"
-                                        className="inline-flex items-center bg-[#68cdfe] border-0 py-1 px-3 focus:outline-none hover:bg-[#e79128] rounded text-white font-bold text-sm"
+                                        className="inline-flex items-center bg-[#2d6397] border-0 py-1 px-3 focus:outline-none hover:bg-[#e79128] rounded text-white font-bold text-sm"
                                     >
                                         Agregar Tarea
                                     </Link>
@@ -50,7 +59,7 @@ const NavBar = () => {
                 </nav>
 
 
-                <div className="lg:px-16 px-4 py-6 flex flex-wrap items-center justify-between bg-[#68cdfe] w-[100%] mx-auto shadow-m">
+                <div className="lg:px-16 px-4 py-6 flex flex-wrap items-center justify-between bg-[#e9f4f9] w-[100%] mx-auto shadow-m">
                     {/* Logo */}
                     <Link
                         to="/"
@@ -61,14 +70,14 @@ const NavBar = () => {
                             src={Logo}
                             alt="step"
                         />
-                        <span className="text-lg font-bold text-[#fff]">Homework Management</span>
+                        <span className="text-lg font-bold text-[#2d6397]">Homework Management</span>
                     </Link>
 
                     {/* Menú */}
                     <nav className="lg:px-16 flex flex-col md:flex-row text-base items-center md:items-end justify-center md:justify-end gap-10 w-full md:w-auto">
-                        <Link to="/" className="text-[#1e293b] hover:text-[#ffef6a] font-bold">
+                        <NavLink to="/" className="text-[#2d6397] hover:text-[#ffef6a] font-bold " activeClassName=" text-[#ffef6a]">
                             Inicio
-                        </Link>
+                        </NavLink >
                         <Link to="/quienessomos" className="text-[#1e293b] hover:text-[#ffef6a] font-bold">
                             Quiénes Somos
                         </Link>
@@ -80,7 +89,7 @@ const NavBar = () => {
                         </Link>
                     </nav>
                 </div>
-            </div>
+            </div >
 
         </>
     )
