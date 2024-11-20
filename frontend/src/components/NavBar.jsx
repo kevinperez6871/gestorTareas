@@ -50,7 +50,7 @@ const NavBar = () => {
                 </nav>
 
 
-                <div className="lg:px-16 px-4 py-6 flex flex-wrap items-center justify-between bg-[#2d6397] w-[100%] mx-auto shadow-m">
+                <div className="lg:px-16 px-4 py-6 flex flex-wrap items-center justify-between bg-[#68cdfe] w-[100%] mx-auto shadow-m">
                     {/* Logo */}
                     <Link
                         to="/"
@@ -65,17 +65,17 @@ const NavBar = () => {
                     </Link>
 
                     {/* Menú */}
-                    <nav className="lg:px-16 flex flex-col md:flex-row text-base items-center md:items-end justify-center md:justify-end gap-4 w-full md:w-auto">
-                        <Link to="/" className="text-[#fff] hover:text-[#ffef6a] font-bold">
+                    <nav className="lg:px-16 flex flex-col md:flex-row text-base items-center md:items-end justify-center md:justify-end gap-10 w-full md:w-auto">
+                        <Link to="/" className="text-[#1e293b] hover:text-[#ffef6a] font-bold">
                             Inicio
                         </Link>
-                        <Link to="/quienessomos" className="text-[#fff] hover:text-[#ffef6a] font-bold">
+                        <Link to="/quienessomos" className="text-[#1e293b] hover:text-[#ffef6a] font-bold">
                             Quiénes Somos
                         </Link>
-                        <Link to="/api" className="text-[#fff] hover:text-[#ffef6a] font-bold">
+                        <Link to="/api" className="text-[#1e293b] hover:text-[#ffef6a] font-bold">
                             API
                         </Link>
-                        <Link to="/contactenos" className="text-[#fff] hover:text-[#ffef6a] font-bold">
+                        <Link to="/contactenos" className="text-[#1e293b] hover:text-[#ffef6a] font-bold">
                             Contáctenos
                         </Link>
                     </nav>
