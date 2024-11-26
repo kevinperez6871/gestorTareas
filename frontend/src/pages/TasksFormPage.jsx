@@ -41,30 +41,72 @@ function TasksFormPage() {
 
     })
     return (
-        <div className="bg-zinc-800 max-w-md w-full p-10 rounded-md">
-            <form onSubmit={onSubmit}>
-                <label htmlFor="title"></label>
-                <input
-                    type="text"
-                    placeholder="Title"
-                    {...register("title")}
-                    className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
-                    autoFocus
-                />
-                <label htmlFor="description"></label>
-                <textarea rows="3"
-                    placeholder="Description"
-                    {...register("description")}
-                    className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2">
-                </textarea>
+        <div className="flex items-center justify-center min-h-[calc(100vh-100px)] px-4">
+            <div className="bg-gradient-to-r from-[#fff] to-[#fdfeff]  max-w-md w-full p-8 rounded-md shadow-lg">
+                <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
+                    ¡Agrega tu tarea! 📝
+                </h1>
+                <form onSubmit={onSubmit} className="space-y-4">
+                    {/* Título */}
+                    <div>
+                        <label
+                            htmlFor="title"
+                            className="block text-lg font-semibold text-gray-800 mb-2"
+                        >
+                            Título
+                        </label>
+                        <input
+                            type="text"
+                            id="title"
+                            placeholder="Ej: Estudiar para matemáticas"
+                            {...register("title")}
+                            className="w-full bg-gray-100 text-gray-800 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            autoFocus
+                        />
+                    </div>
 
-                <label htmlFor="date">Date</label>
-                <input type="date" {...register("date")} className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2" />
+                    {/* Descripción */}
+                    <div>
+                        <label
+                            htmlFor="description"
+                            className="block text-lg font-semibold text-gray-800 mb-2"
+                        >
+                            Descripción
+                        </label>
+                        <textarea
+                            id="description"
+                            rows="3"
+                            placeholder="Ej: Resolver los ejercicios de la página 45 del libro"
+                            {...register("description")}
+                            className="w-full bg-gray-100 text-gray-800 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        ></textarea>
+                    </div>
 
-                <button className="bg-indigo-500 px-3 py-2 rounded-md">Save</button>
+                    {/* Fecha */}
+                    <div>
+                        <label
+                            htmlFor="date"
+                            className="block text-lg font-semibold text-gray-800 mb-2"
+                        >
+                            Fecha de entrega
+                        </label>
+                        <input
+                            type="date"
+                            id="date"
+                            {...register("date")}
+                            className="w-full bg-gray-100 text-gray-800 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
 
-            </form>
-
+                    {/* Botón */}
+                    <button
+                        type="submit"
+                        className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200 font-bold"
+                    >
+                        Guardar tarea
+                    </button>
+                </form>
+            </div>
         </div>
     )
 }

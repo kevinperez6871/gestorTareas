@@ -1,30 +1,39 @@
 import Logo from '../assets/logo.png'
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { NavLink } from 'react-router-dom';
+
 
 const NavBar = () => {
     const { isAuthenticated, logout, user } = useAuth();
     return (
         <>
             <div className=" body-font">
-                <nav className='text-white body-font  bg-slate-800  py-5 px-5  w-[100%] mx-auto shadow-md'>
+                <nav className='text-white body-font  bg-slate-800  py-5 px-5  w-[100%] mx-auto shadow-lg'>
                     <div className="container mx-auto py-0 px-5 flex flex-wrap items-end flex-col sm:flex-row sm:items-center sm:text-left text-center">
                         <div className="flex sm:justify-end justify-center w-full gap-10 items-center">
                             {isAuthenticated ? (
                                 <>
                                     <Link
+                                        to="/tasks"
+                                        className="inline-flex items-center bg-[#2d6397] border-0 py-1 px-3 focus:outline-none hover:bg-[#e79128] rounded text-white font-bold text-sm"
+                                    >
+                                        Todas mis Tareas
+                                    </Link>
+
+                                    <Link
                                         to="/add-task"
-                                        className="inline-flex items-center bg-[#68cdfe] border-0 py-1 px-3 focus:outline-none hover:bg-[#e79128] rounded text-white font-bold text-sm"
+                                        className="inline-flex items-center bg-[#2d6397] border-0 py-1 px-3 focus:outline-none hover:bg-[#e79128] rounded text-white font-bold text-sm"
                                     >
                                         Agregar Tarea
                                     </Link>
-                                    <span className="text-[#ffef6a] font-bold text-sm">
+                                    <span className="text-[#68cdfe] font-bold text-sm">
                                         Bienvenido, <span className="font-semibold">{user.username}</span>
                                     </span>
                                     <Link
                                         to="/"
                                         onClick={logout}
-                                        className="text-white hover:text-[#ffef6a] font-bold text-sm"
+                                        className="text-white hover:text-[#68cdfe] font-bold text-sm"
                                     >
                                         Cerrar Sesión
                                     </Link>
@@ -33,13 +42,13 @@ const NavBar = () => {
                                 <>
                                     <Link
                                         to="/login"
-                                        className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-gray-800"
+                                        className="inline-flex items-center bg-[#68cdfe] border-0 py-1 px-3 focus:outline-none hover:bg-[#fcb202] rounded text-white font-bold"
                                     >
                                         Iniciar Sesión
                                     </Link>
                                     <Link
-                                        to="/registro"
-                                        className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-gray-800"
+                                        to="/register"
+                                        className="inline-flex items-center bg-[#68cdfe] border-0 py-1 px-3 focus:outline-none hover:bg-[#fcb202] rounded  text-white font-bold"
                                     >
                                         Registrarse
                                     </Link>
@@ -50,37 +59,57 @@ const NavBar = () => {
                 </nav>
 
 
-                <div className="lg:px-16 px-4 py-6 flex flex-wrap items-center justify-between bg-[#2d6397] w-[100%] mx-auto shadow-m">
+                <div className="px-[6%] py-6 flex flex-wrap items-center justify-between bg-[#fff] w-full mx-auto shadow-md">
                     {/* Logo */}
                     <Link
                         to="/"
                         className="flex flex-col items-center text-white mb-4 w-full md:w-auto md:mb-0"
                     >
                         <img
-                            className="w-24 md:w-1/2 object-cover object-center rounded-lg"
+                            className="  h-[240px] sm:h-[200px] md:h-[240px] lg:h-[120px] xl:h-[150px] object-cover rounded-lg"
                             src={Logo}
-                            alt="step"
+                            alt="logo"
                         />
-                        <span className="text-lg font-bold text-[#fff]">Homework Management</span>
+
                     </Link>
 
                     {/* Menú */}
-                    <nav className="lg:px-16 flex flex-col md:flex-row text-base items-center md:items-end justify-center md:justify-end gap-4 w-full md:w-auto">
-                        <Link to="/" className="text-[#fff] hover:text-[#ffef6a] font-bold">
+                    <nav className="lg:px-16 flex flex-col md:flex-row text-base items-center md:items-end justify-center md:justify-end gap-10 w-full md:w-auto">
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                isActive ? 'text-[#68cdfe] font-bold' : 'text-[#2d6397] hover:text-[#68cdfe] font-bold'
+                            }
+                        >
                             Inicio
-                        </Link>
-                        <Link to="/quienessomos" className="text-[#fff] hover:text-[#ffef6a] font-bold">
+                        </NavLink>
+                        <NavLink
+                            to="/quienessomos"
+                            className={({ isActive }) =>
+                                isActive ? 'text-[#68cdfe] font-bold' : 'text-[#1e293b] hover:text-[#68cdfe] font-bold'
+                            }
+                        >
                             Quiénes Somos
-                        </Link>
-                        <Link to="/api" className="text-[#fff] hover:text-[#ffef6a] font-bold">
+                        </NavLink>
+                        <NavLink
+                            to="/api"
+                            className={({ isActive }) =>
+                                isActive ? 'text-[#68cdfe] font-bold' : 'text-[#1e293b] hover:text-[#68cdfe] font-bold'
+                            }
+                        >
                             API
-                        </Link>
-                        <Link to="/contactenos" className="text-[#fff] hover:text-[#ffef6a] font-bold">
+                        </NavLink>
+                        <NavLink
+                            to="/contactenos"
+                            className={({ isActive }) =>
+                                isActive ? 'text-[#68cdfe] font-bold' : 'text-[#1e293b] hover:text-[#68cdfe] font-bold'
+                            }
+                        >
                             Contáctenos
-                        </Link>
+                        </NavLink>
                     </nav>
                 </div>
-            </div>
+            </div >
 
         </>
     )

@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthContext';
 import { useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import imgRegistro from '../assets/img-registro.png'
 
 
 function RegisterPage() {
@@ -25,44 +26,68 @@ function RegisterPage() {
     })
 
     return (
-        <div className="flex h-[calc(100vh-100px)] items-center justify-center">
-            <div className='bg-zinc-800 max-w-md  p-10 rounded-md'>
-                {
-                    registerErrors.map((error, i) => (
-                        <div className="bg-red-500 p-2 text-white" key={i}>
-                            {error}
-                        </div>
-                    ))
-                }
-                <h1 className="text-3xl font-bold my-2">Register</h1>
-                < form onSubmit={onSubmit}>
-
-                    <input type="text"
+        <div className="flex flex-col lg:flex-row h-[calc(100vh-100px)] items-center justify-center gap-8 lg:gap-16 p-4">
+            {/* Columna izquierda para el formulario */}
+            <div className="bg-gradient-to-r from-[#fff] to-[#fdfeff] max-w-md w-full p-10 rounded-md shadow-md flex-shrink-0">
+                {registerErrors.map((error, i) => (
+                    <div className="bg-red-500 p-2 text-white mb-2 rounded-md" key={i}>
+                        {error}
+                    </div>
+                ))}
+                <h1 className="text-3xl font-bold my-2 text-gray-800 text-center">
+                    ¡Regístrate!
+                </h1>
+                <form onSubmit={onSubmit}>
+                    <input
+                        type="text"
                         {...register("username", { required: true })}
-                        className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
-                        placeholder='Username'
+                        className="w-full bg-gray-100 text-gray-800 px-4 py-2 rounded-md my-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Nombre de usuario"
                     />
-                    {errors.username && (<p className='text-red-500'>Username is Required</p>)}
-                    < input type="email"
+                    {errors.username && (
+                        <p className="text-red-500 text-sm">Usuario es necesario</p>
+                    )}
+                    <input
+                        type="email"
                         {...register("email", { required: true })}
-                        className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
-                        placeholder='Email'
+                        className="w-full bg-gray-100 text-gray-800 px-4 py-2 rounded-md my-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Correo electrónico"
                     />
-                    {errors.email && (<p className='text-red-500'>Email is Required</p>)}
-                    < input type="password"
+                    {errors.email && (
+                        <p className="text-red-500 text-sm">Email es necesario</p>
+                    )}
+                    <input
+                        type="password"
                         {...register("password", { required: true })}
-                        className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
-                        placeholder='Password'
+                        className="w-full bg-gray-100 text-gray-800 px-4 py-2 rounded-md my-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Contraseña"
                     />
-                    {errors.password && (<p className='text-red-500'>Password is Required</p>)}
-                    < button type="submit" className="bg-sky-500 text-white px-4 py-2 rounded-md my-2" >
-                        Register
+                    {errors.password && (
+                        <p className="text-red-500 text-sm">La contraseña es necesaria</p>
+                    )}
+                    <button
+                        type="submit"
+                        className="bg-blue-500 text-white px-4 py-2 rounded-md my-2 w-full hover:bg-blue-600 transition duration-200 font-bold"
+                    >
+                        Registrarse
                     </button>
-                </form >
-                <p className="flex gap-x-2 justify-between">
-                    Already have an account<Link to="/login" className="text-sky-500" >Sign Up</Link>
+                </form>
+                <p className="text-gray-700 text-center mt-4 font-bold">
+                    ¿Ya tienes una cuenta?{" "}
+                    <Link to="/login" className="text-gray-800 hover:underline font-bold">
+                        Inicia Sesión
+                    </Link>
                 </p>
-            </ div >
+            </div>
+
+            {/* Columna derecha para la imagen */}
+            <div className="hidden lg:flex items-center justify-center w-full lg:w-1/2 h-auto flex-shrink-0">
+                <img
+                    src={imgRegistro}
+                    alt="Motivational image for students"
+                    className="max-w-full max-h-full"
+                />
+            </div>
         </div>
     )
 }

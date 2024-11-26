@@ -3,15 +3,15 @@ import banner from '../assets/banner.jpg'
 const Header = () => {
     return (
         <>
-            <section className="text-gray-600 body-font">
+            <section className="text-gray-600  lg:px-16">
                 <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 font-medium text-gray-900">
                             Tus Tareas en
                             <br className="hidden lg:inline-block" />
                             un Solo Lugar
                         </h1>
-                        <p className="mb-8 leading-relaxed">
+                        <p className="my-8 leading-relaxed">
                             Crear una cuenta es fácil y rápido. Solo necesitas unos minutos para tener tu propio espacio donde organizar tus tareas y actividades escolares
                         </p>
                         <div className="flex justify-center">
