@@ -1,4 +1,5 @@
-
+import luis from '../assets/luis.png'
+import kevin from '../assets/kevin.png'
 
 const QuienesSomos = () => {
     return (
@@ -7,7 +8,7 @@ const QuienesSomos = () => {
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20 ali">
                         <h1 className="text-[24px] sm:text-[42px] italic font-semibold text-center mb-8 text-[#1e293b]">QUIÉNES SOMOS</h1>
-                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Somos una plataforma dedicada a ayudarte a gestionar tus tareas de manera eficiente.</p>
+                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Estamos comprometidos con ofrecerte una herramienta que te ayude a organizarte, mejorar tus habilidades y alcanzar tus metas. Esta plataforma ha sido diseñada pensando en ti, un estudiante que busca optimizar su tiempo y cumplir con sus responsabilidades de forma eficiente.</p>
                     </div>
                     <div className="flex flex-wrap justify-center">
                         <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6   flex justify-center items-center">
@@ -36,11 +37,11 @@ const QuienesSomos = () => {
                     <div className="flex flex-wrap -m-4">
                         <div className="p-4 lg:w-1/2">
                             <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-                                <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://dummyimage.com/200x200" />
+                                <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src={luis} />
                                 <div className="flex-grow sm:pl-8">
                                     <h2 className="title-font font-medium text-lg text-gray-900">Luis Alberto Rodríguez </h2>
                                     <h3 className="text-gray-500 mb-3">Diseño Frontend</h3>
-                                    <p className="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                                    <p className="mb-4">Luis es un estudiante del programa Talento Tech que se unió al equipo en agosto de 2024. Su pasión por el diseño web y la experiencia de usuario lo impulsan a crear interfaces que sean no solo funcionales, sino también visualmente atractivas y fáciles de usar. Con él al mando del frontend, la plataforma siempre tendrá un toque dinámico y amigable.</p>
                                     <span className="inline-flex">
                                         <a className="text-gray-500">
                                             <svg fill="none" stroke="currentColor" strokelinecap="round" strokelinejoin="round" strokewidth="2" className="w-5 h-5" viewBox="0 0 24 24">
@@ -63,11 +64,11 @@ const QuienesSomos = () => {
                         </div>
                         <div className="p-4 lg:w-1/2">
                             <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-                                <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://dummyimage.com/201x201" />
+                                <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src={kevin} />
                                 <div className="flex-grow sm:pl-8">
                                     <h2 className="title-font font-medium text-lg text-gray-900">Kevin Pérez</h2>
                                     <h3 className="text-gray-500 mb-3">Desarrollo Backend </h3>
-                                    <p className="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                                    <p className="mb-4">Kevin es el desarrollador detrás de la magia del backend. Con experiencia en estructuración de bases de datos y gestión de servidores, asegura que cada tarea que agregues esté almacenada de manera segura y eficiente. Gracias a su trabajo, puedes confiar en que tu información estará protegida mientras disfrutas de la plataforma sin preocupaciones.</p>
                                     <span className="inline-flex">
                                         <a href="#" className="text-gray-500">
                                             <svg

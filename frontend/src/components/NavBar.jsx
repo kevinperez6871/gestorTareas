@@ -47,7 +47,7 @@ const NavBar = () => {
                                         Iniciar Sesión
                                     </Link>
                                     <Link
-                                        to="/registro"
+                                        to="/register"
                                         className="inline-flex items-center bg-[#68cdfe] border-0 py-1 px-3 focus:outline-none hover:bg-[#fcb202] rounded  text-white font-bold"
                                     >
                                         Registrarse
